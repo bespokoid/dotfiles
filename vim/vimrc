@@ -1,0 +1,184 @@
+
+source ~/.vim/vundles.vim
+source ~/.vim/global.vim
+source ~/.vim/settings.vim
+source ~/.vim/plugins.vim
+
+" based on http://github.com/jferris/config_files/blob/master/vimrc
+
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+set lbr
+set sbr=''
+set nowritebackup
+set history=50		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set incsearch		" do incremental searching
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" This is an alternative that also works in block mode, but the deleted
+" text is lost and it only works for putting the current register.
+"vnoremap p "_dp
+
+set background=dark
+set t_Co=256
+let g:solarized_termcolors=256
+colo solarized
+
+
+" Switch wrap off for everything
+set nowrap
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  " Set File type to 'text' for files ending in .txt
+  autocmd BufNewFile,BufRead *.txt setfiletype text
+
+  " Enable soft-wrapping for text files
+  autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  " autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  " Automatically load .vimrc source when saved
+  autocmd BufWritePost .vimrc source $MYVIMRC
+
+  augroup END
+
+else
+
+  set autoindent		" always set autoindenting on
+
+endif " has("autocmd")
+
+" if has("folding")
+  " set foldenable
+  " set foldmethod=syntax
+  " set foldlevel=1
+  " set foldnestmax=2
+  " set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
+" endif
+
+" Softtabs, 2 spaces
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Always display the status line
+set laststatus=2
+
+" For Haml
+au! BufRead,BufNewFile *.{haml,hamlc}         setfiletype haml
+
+
+" Indenting *******************************************************************
+set ai " Automatically set the indent of a new line (local to buffer)
+set si " smartindent (local to buffer)
+set pastetoggle=<F2>
+
+
+if has("autocmd")
+  au InsertEnter * hi CursorLine gui=underline
+  " au InsertLeave * hi CursorLine ctermbg=lightgrey guibg=LightGrey 
+  " silent execute !gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+  " au VimLeave * silent execute gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+endif
+
+" Press ^F from insert mode to insert the current file name
+" imap <C-F> <C-R>=expand("%")<CR>
+
+" Maps autocomplete to tab
+" imap <Tab> <C-N>
+
+
+" ino <tab> <c-r>=TriggerSnippet()<cr>
+" snor <tab> <esc>i<right><c-r>=TriggerSnippet()<cr>
+
+" Display extra whitespace
+" set list listchars=tab:»·,trail:·
+
+
+" Local config
+if filereadable(".vimrc.local")
+  source .vimrc.local
+endif
+
+" Use Ack instead of Grep when available
+if executable("ack")
+  set grepprg=ack\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
+endif
+
+
+" Numbers
+set number
+set numberwidth=5
+
+
+" Tab completion options
+" (only complete to the longest unambiguous match, and show a menu)
+ set completeopt=longest,menu
+ set wildmode=list:longest,list:full
+ set complete=.,t
+
+
+set nolist
+set cb=autoselect
+
+" case only matters with mixed case expressions
+set ignorecase
+set smartcase
+
+" Tags
+let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+set tags=./tags;
+
+let g:fuf_splitPathMatching=1
+
+" Open URL
+command -bar -nargs=1 OpenURL :!open <args>
+function! OpenURL()
+  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
+  echo s:uri
+  if s:uri != ""
+	  exec "!open \"" . s:uri . "\""
+  else
+	  echo "No URI found in line."
+  endif
+endfunction
+map <Leader>w :call OpenURL()<CR>
+
+
+
+
+" bindings are loaded after all plugins in ./after/plugin/bindings.vim
+source ~/.vim/keyboard.vim
+
+if filereadable(expand("~/.vim_local"))
+  source ~/.vim_local
+endif
