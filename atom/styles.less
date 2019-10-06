@@ -1,0 +1,85 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+
+
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+// style the background color of the tree view
+.tree-view {
+  // background-color: whitesmoke;
+}
+
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-workspace {
+  // color: white;
+  // background-color: hsl(180, 24%, 12%);
+  font-kerning: inherit;
+  font-size: 15px;
+  font-family: Operator Mono Medium;
+  font-weight: 400;
+  // line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+atom-text-editor {
+    font-size: 17px;
+    font-family: Operator Mono Book;
+    line-height: 1.2;
+    font-weight: 600;
+    // line-height: 1.5;
+    text-rendering: optimizeLegibility;
+
+    .syntax--entity, .syntax--name, .syntax--function{
+      font-family: Operator Mono Medium;
+      font-weight: 400;
+    }
+    .syntax--comment {
+      font-family: Operator Mono Light;
+      font-style: italic;
+    }
+    .syntax--section {
+      // font-weight: bold;
+      color: #73d1c8;
+    }
+    .syntax--keyword.syntax--control {
+      font-style: italic;
+    }
+    .syntax--keyword.syntax--operator {
+      font-weight: bold;
+    }
+    .syntax--keyword.syntax--other.syntax--special-method {
+      font-style: italic;
+    }
+}
+
+atom-dock {
+  font-size: 14px;
+  // line-height: 1;
+}
+
+ul.tab-bar {
+  font-size: 13px;
+  font-family: Operator Mono Bold;
+  font-weight: 200;
+  // line-height: 0.5;
+  li.modified {
+    font-weight: bold;
+    font-style: italic;
+  }
+}
+
+// To style other content in the text editor's shadow DOM, use the ::shadow expression
+atom-text-editor::shadow .cursor {
+  // border-color: red;
+}

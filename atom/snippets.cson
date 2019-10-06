@@ -1,0 +1,34 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'.source.python':
+  'backtrader Indicator':
+    'prefix':'bt-indicator'
+    'body':'#!/usr/bin/env python\n# -*- coding: utf-8; py-indent-offset:4 -*-\n\nfrom __future__ import (absolute_import, division, print_function,\n\t\t\t\t\t\t\t\t\t\t\t\tunicode_literals)\nimport backtrader as bt\n\nclass TrendLine(bt.Indicator):\n\t\t\'\'\'\n\t\tThis indicator shall produce a signal when price reaches a calculated trend line.\n\n\t\tThe indicator requires two price points and date points to serve as X and Y\n\t\tvalues in calcuating the slope and the future expected price trend\n\n\t\tx1 = Date/Time, String in the following format "YYYY-MM-DD HH:MM:SS" of\n\t\tthe start of the trend\n\t\ty1 = Float, the price (Y value) of the start of the trend.\n\t\tx2 = Date/Time, String in the following format "YYYY-MM-DD HH:MM:SS" of\n\t\tthe end of the trend\n\t\ty2 = Float, the price (Y value) of the end of the trend.\n\t\t\'\'\'\n\n\t\tlines = (\'signal\',\'trend\')\n\t\tparams = (\n\t\t\t\t(\'x1\', None),\n\t\t\t\t(\'y1\', None),\n\t\t\t\t(\'x2\', None),\n\t\t\t\t(\'y2\', None)\n\t\t)\n\n\t\tdef __init__(self):\n\t\t\t\tself.p.x1 = datetime.datetime.strptime(self.p.x1, "%Y-%m-%d %H:%M:%S")\n\t\t\t\tself.p.x2 = datetime.datetime.strptime(self.p.x2, "%Y-%m-%d %H:%M:%S")\n\t\t\t\tx1_time_stamp = time.mktime(self.p.x1.timetuple())\n\t\t\t\tx2_time_stamp = time.mktime(self.p.x2.timetuple())\n\t\t\t\tself.m = self.get_slope(x1_time_stamp,x2_time_stamp,self.p.y1,self.p.y2)\n\t\t\t\tself.B = self.get_y_intercept(self.m, x1_time_stamp, self.p.y1)\n\t\t\t\tself.plotlines.trend._plotskip = True\n\n\t\tdef next(self):\n\t\t\t\tdate = self.data0.datetime.datetime()\n\t\t\t\tdate_timestamp = time.mktime(date.timetuple())\n\t\t\t\tY = self.get_y(date_timestamp)\n\t\t\t\tself.lines.trend[0] = Y\n\n\t\t\t\t#Check if price has crossed up / down into it.\n\t\t\t\tif self.data0.high[-1] < Y and self.data0.high[0] > Y:\n\t\t\t\t\t\tself.lines.signal[0] = -1\n\t\t\t\t\t\treturn\n\n\t\t\t\t#Check for cross downs (Into support)\n\t\t\t\telif self.data0.low[-1] > Y and self.data0.low[0] < Y:\n\t\t\t\t\t\tself.lines.signal[0] = 1\n\t\t\t\t\t\treturn\n\n\t\t\t\telse:\n\t\t\t\t\t\tself.lines.signal[0] = 0\n\n\t\tdef get_slope(self, x1,x2,y1,y2):\n\t\t\t\tm = (y2-y1)/(x2-x1)\n\t\t\t\treturn m\n\n\t\tdef get_y_intercept(self, m, x1, y1):\n\t\t\t\tb=y1-m*x1\n\t\t\t\treturn b\n\n\t\tdef get_y(self,ts):\n\t\t\t\tY = self.m * ts + self.B\n\t\t\t\treturn Y\n'
+  'backtrader Signal':
+    'prefix':'bt-signal'
+    'body':'\nclass IchimokuSignal(bt.Indicator):\n\tlines = (\'signal\',)\n\n\tdef __init__(self):\n\t\tif self.data0.ichimoku.l.tenkan_sen > self.data0.ichimoku.l.kijun_sen and self.data0.ichimoku.l.tenkan_sen[\n\t\t\t\t-1] <= self.data0.ichimoku.l.kijun_sen[-1]:\n\t\t\tself.lines.signal = 1\n\t\telif self.data0.ichimoku.l.tenkan_sen < self.data0.ichimoku.l.kijun_sen and self.data0.ichimoku.l.tenkan_sen[\n\t\t\t\t-1] >= self.data0.ichimoku.l.kijun_sen[-1]:\n\t\t\tself.lines.signal = -1\n\t\telse:\n\t\t\tself.lines.signal = 0'
+
+'.source.todo':
+  'Todo':
+    'prefix': 'todo'
+    'body': '  ☐ $1 $2'

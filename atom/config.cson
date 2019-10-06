@@ -1,0 +1,291 @@
+"*":
+  Hydrogen:
+    debug: true
+    globalMode: true
+    kernelNotifications: true
+    outputAreaDock: true
+  "atom-beautify":
+    executables:
+      autopep8:
+        path: "/home/x/.pyenv/shims/autopep8"
+      black:
+        path: "/home/x/.pyenv/shims/black"
+      emacs:
+        path: "/usr/bin/emacs"
+      isort:
+        path: "/home/x/.pyenv/shims/isort"
+    general:
+      _analyticsUserId: "441824ec-f4e0-4d32-b608-56bdb41fd372"
+      loggerLevel: "debug"
+    markdown:
+      commonmark: true
+    python: {}
+  "atom-clock":
+    showClockIcon: true
+  "atom-ide-ui":
+    "atom-ide-code-format": {}
+    "atom-ide-console":
+      fontScale: 1
+    "atom-ide-diagnostics-ui":
+      statusBarPosition: "right"
+    "atom-ide-signature-help":
+      enable: false
+    "atom-ide-terminal":
+      allowTransparency: true
+      cursorBlink: true
+      cursorStyle: "bar"
+    "debugger-exceptionBreakpointsCollapsed": true
+    use:
+      "atom-ide-diagnostics-ui": "never"
+  "atom-material-ui":
+    colors:
+      accentColor: "#af0010"
+      genAccent: true
+    tabs:
+      compactTabs: true
+    ui:
+      panelContrast: true
+      panelShadows: true
+  "atom-minimap-titles":
+    font: "ANSI Shadow"
+  "atom-todoist":
+    token: "5e43bd2a7c956dcafb3f002160ff19f8d6cce386"
+  "autocomplete-python":
+    outputDebug: true
+    outputProviderErrors: true
+    pythonPaths: "/home/x/.pyenv/shims/python"
+    showTooltips: true
+    useSnippets: "required"
+  core:
+    disabledPackages: [
+      "linter-haml"
+      "symbols-tree-nav"
+      "atom-elixir"
+      "autocomplete-elixir"
+      "build-elixir"
+      "html2haml"
+      "html2slim"
+      "language-elixir"
+      "language-haml"
+      "linter-elixir-credo"
+      "linter-pylama"
+      "linter-spell"
+      "autohide-tree-view"
+      "minimap-autohide"
+      "minimap-hide"
+      "language-todotxt"
+      "language-todotxt-plus"
+      "spell-check"
+      "linter"
+      "Pompomodoro"
+      "atom-clock"
+      "hey-pane"
+      "es-navigation"
+      "atom-language-matlab"
+      "atom-lupa"
+      "atom-nodejs-snippets"
+      "atom-todoist"
+      "atom-trello"
+      "beaver"
+      "document-outline"
+      "foldingtext-for-atom"
+      "fold-navigator"
+      "gfm-todotxt"
+      "html-outliner"
+      "ide-css"
+      "ide-yaml"
+      "navigate"
+      "navigate-indent"
+      "structure-view"
+      "nav-panel-plus"
+      "nav-panel"
+      "linter-python-pep257"
+      "atom-file-icons"
+      "seti-icons"
+      "city-lights-icons"
+      "ide-python"
+    ]
+    openEmptyEditorOnStart: false
+    packagesWithKeymapsDisabled: [
+      "python-yapf"
+      "spell-check"
+      "atom-todoist"
+      "tool-bar"
+    ]
+    projectHome: "/home/x/code"
+    restorePreviousWindowsOnStart: "always"
+    telemetryConsent: "no"
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax"
+    ]
+    uriHandlerRegistration: "always"
+    useTreeSitterParsers: false
+    warnOnLargeFileLimit: 100
+  "data-explorer":
+    theme: "light"
+  editor:
+    fontFamily: "Operator Mono Book"
+    invisibles: {}
+    preferredLineLength: 1
+    scrollPastEnd: true
+    showIndentGuide: true
+    zoomFontWhenCtrlScrolling: false
+  "exception-reporting":
+    userId: "8e9f74ed-41c7-c351-ba14-b7db895f5bfe"
+  "file-icons": {}
+  "hey-pane":
+    expandedWidth: 75
+  "hydrogen-launcher": {}
+  hyperclick: {}
+  "ide-python":
+    pylsPlugins:
+      jedi_completion:
+        enabled: false
+        include_params: false
+      jedi_definition:
+        enabled: false
+      jedi_hover:
+        enabled: false
+      jedi_references:
+        enabled: false
+      jedi_signature_help:
+        enabled: false
+      jedi_symbols:
+        all_scopes: false
+        enabled: false
+      pycodestyle:
+        maxLineLength: 0
+      pylint:
+        enabled: true
+      rope_completion:
+        enabled: true
+      yapf:
+        enabled: true
+    python: "/home/x/.pyenv/shims/python"
+  "imdone-atom":
+    showLoginOnLaunch: false
+    showNotifications: true
+    showTagsInline: true
+  "imdone-atom-github":
+    accessToken: "c5b72b58714b1c2ce8f5fff32e373810451e6a3d"
+  "julia-client":
+    firstBoot: false
+    uiOptions:
+      layouts:
+        openDefaultPanesOnStartUp: false
+  kite:
+    showWelcomeNotificationOnStartup: false
+  "linter-haml":
+    executablePath: '''
+      haml-lint
+      
+    '''
+  "linter-pylama":
+    executablePath: "/home/x/.pyenv/shims/pylama"
+    interpreter: "/home/x/.pyenv/shims/python"
+    pylamaVersion: "external"
+  "linter-python":
+    executablePath: "/home/x/.pyenv/shims/pylama"
+    withMcCabe: true
+    withPep257: true
+    withPep8: true
+    withPyflakes: true
+    withPylint: true
+  "linter-ui-default":
+    panelHeight: 300
+  livereload:
+    applyCSSLive: false
+  minimap:
+    moveCursorOnMinimapClick: true
+    plugins:
+      bookmarks: true
+      bookmarksDecorationsZIndex: 0
+      codeglance: true
+      codeglanceDecorationsZIndex: 0
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "git-diff": false
+      "git-diffDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      "lens-mode": false
+      "lens-modeDecorationsZIndex": 0
+      linter: false
+      linterDecorationsZIndex: 0
+      "minimap-autohide": false
+      "minimap-autohideDecorationsZIndex": 0
+      "minimap-hide": false
+      "minimap-hideDecorationsZIndex": 0
+      "minimap-quick-highlight": true
+      "minimap-quick-highlightDecorationsZIndex": 0
+      pigments: true
+      pigmentsDecorationsZIndex: 0
+      selection: true
+      selectionDecorationsZIndex: 0
+      "split-diff": false
+      "split-diffDecorationsZIndex": 0
+  "nav-panel":
+    sort: false
+  "nav-panel-plus":
+    leftPanel: true
+  navigate:
+    f1: "http://devdocs.io/#q=&searchterm"
+    f10: "https://duckduckgo.com/?q=&searchterm"
+    f6: "http://www.bing.com/search?q=&searchterm"
+  "nord-atom-ui":
+    darkerFormFocusEffect: true
+  organized:
+    defaultVisibilityCycle: "hide-bottom"
+  "project-manager":
+    environmentSpecificProjects: true
+    includeGitRepositories: true
+    savePathsRelativeToHome: true
+    sortBy: "last modified"
+  "python-debugger":
+    pythonExecutable: "/home/x/.pyenv/shims/ipython"
+  "python-tools":
+    pythonPath: "/home/x/.pyenv/shims/python"
+  "python-yapf":
+    yapfPath: "/home/x/.pyenv/shims/yapf"
+    yapfStyle: "chromium"
+  "seti-icons": {}
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    scrollSyncType: "Vertical + Horizontal"
+  "symbols-navigator":
+    position: "Right"
+  "symbols-tree-nav":
+    colorsFromSyntaxTheme: true
+    customColors: true
+  tasks:
+    addTimestampOnConvertToTask: true
+    dateFormat: "MM/DD HH:mm"
+  "todo-show":
+    ignoreThesePaths: [
+      "node_modules"
+      "vendor"
+      "bower_components"
+      "*.pdf"
+      "lib/*"
+    ]
+    sortBy: "Type"
+    statusBarIndicator: true
+  "tool-bar":
+    iconSize: "16px"
+    position: "Right"
+    visible: false
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+    squashDirectoryNames: true
+  welcome:
+    showOnStartup: false
+".python.source":
+  editor:
+    autoIndentOnPaste: true

@@ -1,0 +1,10 @@
+[
+  {
+    title: "Quanto"
+    group: "python"
+    paths: [
+      "/home/x/code/quanto"
+    ]
+    devMode: false
+  }
+]

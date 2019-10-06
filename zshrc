@@ -76,8 +76,8 @@ POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 #
 # POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 # POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-#
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status go_version nvm os_icon)
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status pyenv nvm os_icon todo)
 # POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
 # POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR='%F{008}\uf104%F{008}'
 #
@@ -144,7 +144,7 @@ POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions rvm rails ruby git-flow git-prompt sudo rake mix mix-fast bundler capistrano docker emoji z gem npm postgres python react-native redis-cli sublime tmux tmuxinator ubuntu vagrant vim-interaction yarn zsh-navigation-tools zsh_reload zsh-completions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions rvm rails ruby git-flow git-prompt sudo rake mix mix-fast bundler capistrano docker emoji z gem npm postgres python react-native redis-cli sublime tmux tmuxinator ubuntu vagrant vim-interaction yarn zsh-navigation-tools zsh_reload zsh-completions zsh-syntax-highlighting zsh-better-npm-completion conda-zsh-completion)
 
 source ~/.fonts/*.sh
 source $ZSH/oh-my-zsh.sh
