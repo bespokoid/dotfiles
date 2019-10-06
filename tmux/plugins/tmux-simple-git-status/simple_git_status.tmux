@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tmux-simple-git-status/simple_git_status.tmux

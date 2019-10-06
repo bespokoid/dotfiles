@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tmux-mem-cpu-load/freebsd/cpu.cc

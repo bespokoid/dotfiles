@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tpm/HOW_TO_PLUGIN.md

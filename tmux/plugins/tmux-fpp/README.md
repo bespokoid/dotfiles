@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tmux-fpp/README.md

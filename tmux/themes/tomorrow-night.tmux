@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/themes/tomorrow-night.tmux

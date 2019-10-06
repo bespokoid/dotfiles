@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tpm/docs/changing_plugins_install_dir.md

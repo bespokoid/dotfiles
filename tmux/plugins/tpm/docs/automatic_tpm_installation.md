@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tpm/docs/automatic_tpm_installation.md

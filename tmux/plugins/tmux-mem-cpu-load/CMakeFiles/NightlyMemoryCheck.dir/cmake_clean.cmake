@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tmux-mem-cpu-load/CMakeFiles/NightlyMemoryCheck.dir/cmake_clean.cmake

@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tmux-sidebar/scripts/check_tmux_version.sh

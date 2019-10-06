@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tmux-yank/scripts/copy_pane_pwd.sh

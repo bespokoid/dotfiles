@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tmux-copycat/scripts/stored_search_helpers.sh

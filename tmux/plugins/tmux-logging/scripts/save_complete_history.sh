@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tmux-logging/scripts/save_complete_history.sh

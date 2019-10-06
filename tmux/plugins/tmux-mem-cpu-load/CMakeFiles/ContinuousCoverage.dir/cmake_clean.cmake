@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tmux-mem-cpu-load/CMakeFiles/ContinuousCoverage.dir/cmake_clean.cmake

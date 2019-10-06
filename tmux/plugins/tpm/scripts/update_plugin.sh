@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tpm/scripts/update_plugin.sh

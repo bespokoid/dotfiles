@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tmux-yank/vagrant_provisioning.sh

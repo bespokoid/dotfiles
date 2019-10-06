@@ -1,0 +1,1 @@
+/home/x/.dotfiles/tmux/plugins/tmux-copycat/docs/defining_new_stored_searches.md
