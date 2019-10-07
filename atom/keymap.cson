@@ -33,26 +33,38 @@
 
 
 'atom-text-editor':
-  'ctrl-k right': 'window:focus-pane-on-right',
-  'ctrl-k left':  'window:focus-pane-on-left',
-  'ctrl-k up':    'window:focus-pane-above',
-  'ctrl-k down':  'window:focus-pane-below',
 
-  'ctrl-k ctrl-right':	'pane:split-right-and-copy-active-item',
-  'ctrl-k ctrl-left':	'pane:split-left-and-copy-active-item',
-  'ctrl-k ctrl-down':	'pane:split-down-and-copy-active-item'
-  'ctrl-k ctrl-up':	  'pane:split-up-and-copy-active-item',
+  'ctrl-k tab': 'snippets:available',
 
+  'ctrl-k l': 'window:focus-pane-on-right',
+  'ctrl-k h':  'window:focus-pane-on-left',
+  'ctrl-k j':    'window:focus-pane-above',
+  'ctrl-k k':  'window:focus-pane-below',
+
+  'ctrl-k right':	'window:move-active-item-to-pane-right',
+  'ctrl-k left':	'window:move-active-item-to-pane-left',
+  'ctrl-k down':	'window:move-active-item-to-pane-below'
+  'ctrl-k up':	  'window:move-active-item-to-pane-above',
+
+  'ctrl-k _':	'pane:split-down',
   'ctrl-k -':	'pane:split-down',
   'ctrl-k |':	  'pane:split-right',
 
+  'ctrl-k ctrl-up':	'pane:increase-size',
+  'ctrl-k ctrl-down':	'pane:decrease-size',
+  'ctrl-k ctrl-left':	'window:toggle-left-dock',
+  'ctrl-k ctrl-right':	'window:toggle-right-dock',
+
+
+
   # 'ctrl-space':   'command-palette:toggle',
-  'alt-space':	'autocomplete:toggle',
-  'ctrl-[':       'pane:show-previous-item',
-  'ctrl-]':       'pane:show-next-item',
+  'ctrl-k a':	    'autocomplete:toggle',
+  'ctrl-[':       'editor:fold-current-row',
+  'ctrl-]':       'editor:unfold-current-row',
 
 'atom-workspace':
-  'ctrl-k ctrl-m': 'window:toggle-full-screen'
+  'ctrl-k ctrl-f': 'window:toggle-full-screen',
+  'ctrl-k m': '',
   # "f10": "debugger:step-over",
   # "f11": "debugger:step-into",
   # "shift-f11": "debugger:step-out",

@@ -28,6 +28,457 @@
     'prefix':'bt-signal'
     'body':'\nclass IchimokuSignal(bt.Indicator):\n\tlines = (\'signal\',)\n\n\tdef __init__(self):\n\t\tif self.data0.ichimoku.l.tenkan_sen > self.data0.ichimoku.l.kijun_sen and self.data0.ichimoku.l.tenkan_sen[\n\t\t\t\t-1] <= self.data0.ichimoku.l.kijun_sen[-1]:\n\t\t\tself.lines.signal = 1\n\t\telif self.data0.ichimoku.l.tenkan_sen < self.data0.ichimoku.l.kijun_sen and self.data0.ichimoku.l.tenkan_sen[\n\t\t\t\t-1] >= self.data0.ichimoku.l.kijun_sen[-1]:\n\t\t\tself.lines.signal = -1\n\t\telse:\n\t\t\tself.lines.signal = 0'
 
+# These are copy pasted from package python-snippets
+  'Function Definition':
+    'prefix': 'def'
+    'body': '''
+    def ${1:fname}(${2:arg}):
+        ${3:pass}
+    $4
+    '''
+  'Initiator Function':
+    'prefix': 'defi'
+    'body': '''
+    def __init__(self, ${1:arg}):
+        ${2:pass}
+    $3
+    '''
+  'Print Function':
+    'prefix': 'print'
+    'body': 'print($1)$2'
+
+    # Tkinter snippets
+
+  'Import Tkinter':
+    'prefix': 'imtk'
+    'body': 'import tkinter as tk$1'
+
+  'Root Configuration':
+    'prefix': 'config'
+    'body': 'config(menu=$1)$2'
+
+  'Button':
+    'prefix': 'button'
+    'body': 'tk.Button(${1:root}, text="$2")$3'
+
+  'Label':
+    'prefix': 'label'
+    'body': 'tk.Label(${1:root}, text="$2")$3'
+
+  'Frame':
+    'prefix': 'frame'
+    'body': 'tk.Frame(${1:root})$2'
+
+  'Entry':
+    'prefix': 'entry'
+    'body': 'tk.Entry(${1:root})$2'
+
+  'Grid':
+    'prefix': 'grid'
+    'body': 'grid(row=$1, colomn=$2)$3'
+
+  'Sticky':
+    'prefix': 'sticky'
+    'body': 'sticky=tk.$1'
+
+  'Check Button':
+    'prefix': 'checkbutton'
+    'body': 'tk.Checkbutton(${1:root}, text="$2")$3'
+
+  'Main Loop':
+    'prefix': 'mainloop'
+    'body': 'mainloop()$1'
+
+  'Pack':
+    'prefix': 'pack'
+    'body': 'pack($1)$2'
+
+  'Side':
+    'prefix': 'side'
+    'body': 'side=tk.$1'
+
+  'Bind':
+    'prefix': 'bind'
+    'body': 'bind("<Button-${1:1}>", ${2:fxn})$3'
+
+  'Menu':
+    'prefix': 'menu'
+    'body': 'tk.menu(${1:root})$2'
+
+  'Add Cascade':
+    'prefix': 'add cascade'
+    'body': 'add_cascade(label="$1", menu=$2)$3'
+
+  'Add Command':
+    'prefix': 'add command'
+    'body': 'add_command(label="$1", command=$2)$3'
+
+  'Add Seperator':
+    'prefix': 'add seperator'
+    'body': 'add_separator()$1'
+
+# Awesome-python-snippers package
+  'Python File Header':
+    'prefix': 'fileheader'
+    'body': '# -*- coding: utf-8 -*-'
+
+  'Python File Shebang':
+    'prefix': 'shebang'
+    'body': '#!/usr/bin/env python'
+
+  'set breakpoint for ipdb debugger':
+    'prefix': 'ipdb'
+    'body': 'import ipdb; ipdb.set_trace()  # noqa'
+
+  'set scripting environment':
+    'prefix': 'ifname'
+    'body': 'if __name__ == "__main__":'
+
+# Imports
+  'import re':
+    'prefix': 'impr'
+    'body': 'import re'
+
+  'import requests':
+    'prefix': 'imreq'
+    'body': 'import requests'
+
+  'import os and sys':
+    'prefix': 'imos'
+    'body': '''
+    import os
+    import sys
+    '''
+
+  'import functools':
+    'prefix': 'imfu'
+    'body': 'import functools'
+
+  'import itertools':
+    'prefix': 'imit'
+    'body': 'import itertools'
+
+  'import numpy':
+    'prefix': 'imnp'
+    'body': 'import numpy as np'
+
+  'import pandas':
+    'prefix': 'impd'
+    'body': 'import pandas as pd'
+
+  'import matplotlib pyplot':
+    'prefix': 'immpl'
+    'body': 'from matplotlib import pyplot as plt'
+
+  'import BeautifulSoup':
+    'prefix': 'imbs'
+    'body': 'from bs4 import BeautifulSoup'
+
+  'import datetime':
+    'prefix': 'imdt'
+    'body': 'from datetime import datetime'
+
+# Loops
+
+  'for loop':
+    'prefix': 'fori'
+    'body':'''
+    for ${1:i} in ${2:iterable}:
+        $3
+    '''
+
+  'for loop in range len':
+    'prefix': 'forr'
+    'body':'''
+    for ${1:i} in range(len(${2:iterable})):
+        $3
+    '''
+
+  'for loop one liner':
+    'prefix': 'foro'
+    'body':'''
+    [${1:i} for ${1:i} in ${2:iterable}]
+    '''
+
+# Functions
+
+  'Function':
+    'prefix': 'func'
+    'body':'''
+    def ${1:new_function}(${2:arg}):
+        """$3"""
+        $4
+        return $5
+    '''
+
+
+# Classes
+  'Main Class':
+    'prefix': 'mainclass'
+    'body':'''
+    class ${1:NewClass}(object):
+        """$2"""
+
+        def __init__(self, *args, **kwargs):
+            """$3"""
+            ${4:pass}
+    '''
+
+  'Subclass':
+    'prefix': 'subclass'
+    'body':'''
+    class ${1:Subclass}(${2:object}):
+        """$3"""
+
+        def __init__(self, *args, **kwargs):
+            """$4"""
+            super(${1:Subclass}, self).__init__(*args, **kwargs)
+            $5
+    '''
+
+# Better-python-snippets package
+
+    'Function':
+        prefix: 'def'
+        body: '''
+                def ${1:foo}(${2:arg}):
+                    """
+                    ${3:Docstring for ${1:foo}}
+                    """
+                    ${4:pass}
+                '''
+    'Wrapper Function':
+        prefix: 'defw'
+        body: '''
+                def ${1:foo}(func):
+                    """
+                    ${2:Docstring for ${1:foo}}
+                    """
+                    @wraps(func)
+                    def ${1:foo}_wrapper(*args, **kwargs):
+                        """
+                        Wrapper for ${1:foo}
+                        """
+                        ${3:return func(*args, **kwargs)}
+
+                    # Return wrapper
+                    return ${1:foo}_wrapper
+                '''
+    'Open File':
+        prefix: 'open'
+        body: '''
+                with open(${1:\'filename.txt\'}, ${2:\'r\'}):
+                    ${3:pass}
+                '''
+    'Class':
+        prefix: 'class'
+        body: '''
+                class ${1:MyClass}:
+                    """
+                    ${2:Docstring for ${1:MyClass}}
+                    """
+                    ${3:pass}
+                '''
+    'Class Extends':
+        prefix: 'classe'
+        body: '''
+                class ${1:MyClass}(${2:object}):
+                    """
+                    ${3:Docstring for ${1:MyClass}}
+                    """
+                    ${4:pass}
+                '''
+    'Method':
+        prefix: 'defs'
+        body: '''
+                def ${1:foo}(self, ${2:arg}):
+                    """
+                    ${3:Docstring for ${1:foo}}
+                    """
+                    ${4:pass}
+                '''
+    'Property':
+        prefix: 'prop'
+        body: '''
+                @property
+                def ${1:foo}(self):
+                    """
+                    ${2:Docstring for ${1:foo} property}
+                    """
+                    ${3:pass}
+                '''
+    'Property with Setter':
+        prefix: 'props'
+        body: '''
+                @property
+                def ${1:foo}(self):
+                    """
+                    ${2:Docstring for ${1:foo} property}
+                    """
+                    ${2:pass}
+                @${1:foo}.setter
+                def ${1:foo}(self, value):
+                    """
+                    ${2:Docstring for ${1:foo} property}
+                    """
+                    ${3:pass}
+                '''
+    'Classmethod':
+        prefix: 'defc'
+        body: '''
+                @classmethod
+                def ${1:foo}(cls${2:, arg}):
+                    """
+                    ${3:Docstring for ${1:foo}}
+                    """
+                    ${4:pass}
+                '''
+    'Staticmethod':
+        prefix: 'deft'
+        body: '''
+                @staticmethod
+                def ${1:foo}(${2:arg}):
+                    """
+                    ${3:Docstring for ${1:foo}}
+                    """
+                    ${4:pass}
+                '''
+    'Init Method':
+        prefix: 'minit'
+        body: '''
+                def __init__(self${1:, arg}):
+                    """
+                    ${2:Initializes instance}
+                    """
+                    ${3:pass}
+                '''
+    'Repr Method':
+        prefix: 'mrepr'
+        body: '''
+                def __repr__(self):
+                    """
+                    ${1:Detailed string representation of instance}
+                    """
+                    ${2:pass}
+                '''
+    'Str Method':
+        prefix: 'mstr'
+        body: '''
+                def __str__(self):
+                    """
+                    ${1:String representation of instance}
+                    """
+                    ${2:pass}
+                '''
+    'Call Method':
+        prefix: 'mcall'
+        body: '''
+                def __call__(self, *args, **kwargs):
+                    """
+                    ${1:Calls the object}
+                    """
+                    ${2:pass}
+                '''
+    'Descriptor Methods':
+        prefix: 'mdesc'
+        body: '''
+                def __get__(self, instance, owner=None):
+                    """
+                    ${1:Get value of descriptor in instance}
+                    """
+                    ${2:pass}
+
+                def __set__(self, instance, value):
+                    """
+                    ${3:Set value of descriptor in instance}
+                    """
+                    ${4:pass}
+
+                def __del__(self, instance, owner=None):
+                    """
+                    ${5:Del value of descriptor in instance}
+                    """
+                    ${6:pass}
+                '''
+    'Context Methods':
+        prefix: 'mcntx'
+        body: '''
+                def __enter__(self):
+                    """
+                    ${1:Enters the context of the object}
+                    """
+                    ${2:return self}
+
+                def __exit__(self, ext_type, ext_value, ext_tb):
+                    """
+                    ${3:Exits the context of the object}
+                    """
+                    ${4:pass}
+                '''
+    'Iterator Methods':
+        prefix: 'miter'
+        body: '''
+                def __iter__(self):
+                    """
+                    ${1:Returns the iterator}
+                    """
+                    return self
+
+                def next(self):
+                    """
+                    ${2:Returns the next value in the sequence}
+                    """
+                    ${3:pass}
+
+                def __next__(self):
+                    """
+                    Alias of next
+                    """
+                    return self.next()
+                '''
+    'Setup Function':
+        prefix: 'setup'
+        body: '''
+            from distutils.core import setup
+
+            # Setup function
+            setup(name='${1:my-project}',
+                  version='${2:0.1}',
+                  description='${3:description of project}',
+                  author='${4:Joe Schmoe}',
+                  author_email='${5:joe@schmoes.goes}',
+                  homepage='${6:http://github.com/joe/my-project}',
+                  packages=[${7:'myPackage'}])
+            '''
+    'Unit Test Case':
+        prefix: 'utest'
+        body: '''
+                class ${1:MyTest}Test(unittest.TestCase):
+                    """
+                    Docstring for ${1:MyTest}Test
+                    """
+                    pass
+                '''
+    'Setup Method':
+        prefix: 'usetup'
+        body: '''
+                def setUp(self):
+                    """
+                    Sets up test case
+                    """
+                    pass
+                '''
+    'Test Method':
+        prefix: 'defu'
+        body: '''
+                def test_${1:foo}(self):
+                    """
+                    Tests ${1:foo} method
+                    """
+                    pass
+                '''
+
+
 '.source.todo':
   'Todo':
     'prefix': 'todo'

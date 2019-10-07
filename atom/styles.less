@@ -33,12 +33,26 @@ atom-workspace {
 }
 
 atom-text-editor {
-    font-size: 17px;
+    font-size: 16px;
     font-family: Operator Mono Book;
     line-height: 1.2;
     font-weight: 600;
     // line-height: 1.5;
     text-rendering: optimizeLegibility;
+
+    atom-text-editor-minimap {
+      display: none;
+      width: 0px;
+    }
+
+    .gutter {
+      font-size: 14px;
+      font-family: Operator Mono Light;
+      line-height: 1.4;
+      font-weight: 200;
+      max-width: 40px;
+      // display: none;
+    }
 
     .syntax--entity, .syntax--name, .syntax--function{
       font-family: Operator Mono Medium;
@@ -65,16 +79,17 @@ atom-text-editor {
 
 atom-dock {
   font-size: 14px;
-  // line-height: 1;
+  line-height: 1.4;
+  font-weight: 400;
 }
 
 ul.tab-bar {
-  font-size: 13px;
-  font-family: Operator Mono Bold;
-  font-weight: 200;
+  font-size: 14px;
+  font-family: Operator Mono Medium;
+  font-weight: 600;
   // line-height: 0.5;
   li.modified {
-    font-weight: bold;
+    // font-weight: bold;
     font-style: italic;
   }
 }
@@ -83,3 +98,9 @@ ul.tab-bar {
 atom-text-editor::shadow .cursor {
   // border-color: red;
 }
+
+// .theme-one-dark-ui {
+//   .tab-bar { font-size: 18px; }
+//   .tree-view { font-size: 14px; }
+//   .status-bar { font-size: 12px; }
+// }

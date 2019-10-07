@@ -57,6 +57,7 @@
     showTooltips: true
     useSnippets: "required"
   core:
+    autoHideMenuBar: true
     disabledPackages: [
       "linter-haml"
       "symbols-tree-nav"
@@ -104,6 +105,18 @@
       "seti-icons"
       "city-lights-icons"
       "ide-python"
+      "language-gfm"
+      "hyperclick-markdown"
+      "linter-markdown"
+      "markdown-folding"
+      "tidy-markdown"
+      "pp-markdown"
+      "python-snippets"
+      "markdown-toolbar"
+      "awesome-python-snippets"
+      "better-python-snippets"
+      "tool-bar-markdown"
+      "tool-bar-markdown-writer"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -116,8 +129,8 @@
     restorePreviousWindowsOnStart: "always"
     telemetryConsent: "no"
     themes: [
-      "atom-material-ui"
-      "atom-material-syntax"
+      "seti-ui"
+      "city-lights-syntax"
     ]
     uriHandlerRegistration: "always"
     useTreeSitterParsers: false
@@ -126,14 +139,19 @@
     theme: "light"
   editor:
     fontFamily: "Operator Mono Book"
+    fontSize: 15
     invisibles: {}
+    lineHeight: 1.2
     preferredLineLength: 1
     scrollPastEnd: true
     showIndentGuide: true
+    softTabs: false
     zoomFontWhenCtrlScrolling: false
   "exception-reporting":
     userId: "8e9f74ed-41c7-c351-ba14-b7db895f5bfe"
   "file-icons": {}
+  "flex-tool-bar":
+    persistentProjectToolBar: true
   "hey-pane":
     expandedWidth: 75
   "hydrogen-launcher": {}
@@ -196,12 +214,15 @@
     panelHeight: 300
   livereload:
     applyCSSLive: false
+  "markdown-writer":
+    fileExtension: ".md"
+    siteEngine: "jekyll"
   minimap:
     moveCursorOnMinimapClick: true
     plugins:
       bookmarks: true
       bookmarksDecorationsZIndex: 0
-      codeglance: true
+      codeglance: false
       codeglanceDecorationsZIndex: 0
       cursorline: true
       cursorlineDecorationsZIndex: 0
@@ -237,6 +258,11 @@
     f6: "http://www.bing.com/search?q=&searchterm"
   "nord-atom-ui":
     darkerFormFocusEffect: true
+  "one-dark-ui":
+    stickyHeaders: true
+  "one-o-eight-syntax":
+    backgroundVariant: "Dark"
+    foregroundVariant: "Calm"
   organized:
     defaultVisibilityCycle: "hide-bottom"
   "project-manager":
@@ -252,12 +278,26 @@
     yapfPath: "/home/x/.pyenv/shims/yapf"
     yapfStyle: "chromium"
   "seti-icons": {}
+  "seti-super-compact-ui":
+    compactView: "Super Compact"
+    font: "Default Atom Font"
+    hideTabs: true
+    themeColor: "Purple"
+  "seti-syntax":
+    themeColor: "Purple"
+  "seti-ui":
+    compactView: true
+    disableAnimations: true
+    displayIgnored: false
+    hideProjectTab: true
+    hideTitleBar: true
   "split-diff":
     diffWords: true
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
     scrollSyncType: "Vertical + Horizontal"
+  "status-bar": {}
   "symbols-navigator":
     position: "Right"
   "symbols-tree-nav":
@@ -278,8 +318,8 @@
     statusBarIndicator: true
   "tool-bar":
     iconSize: "16px"
-    position: "Right"
-    visible: false
+    position: "Bottom"
+    useTouchBar: false
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
